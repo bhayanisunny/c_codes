@@ -50,11 +50,12 @@ int getCurWordLen(char *src, int pos)
  */
 void revCurWord(char *src, int pos, int wordlen)
 {
-  char tmp = src[pos];
-  int i=0, j=0, loop = wordlen;
+  char tmp=0;
+  int i=0, j=0;
+  int loop = wordlen;
 
 #ifdef DEBUG_PRINT
-  printf("tmp=%c, pos[%d]=%c, len=%d\n\n", tmp, pos, rev[pos], wordlen);
+  printf("tmp=%c, pos[%d]=%c, len=%d\n\n", tmp, pos, src[pos], wordlen);
 #endif // DEBUG_PRINT
 
   i = pos + wordlen - 1;
@@ -82,7 +83,7 @@ int getNumWords(char *src)
       cnt++;
   }
 
-  return cnt+1;
+  return cnt+1; // there is 1 more word after the last space is detected
 }
 //--------------- HELPER FUNCTIONS - END ---------------//
 
